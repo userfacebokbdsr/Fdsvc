@@ -56,13 +56,6 @@
             border-radius: 15px;
             box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
         }
-        .app-details h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 18px;
-            font-weight: bold;
-            color: white;
-            margin: 0;
-        }
         .download-btn {
             padding: 10px 18px;
             background: #28a745;
@@ -77,6 +70,11 @@
         .download-btn:hover {
             background: #218838;
         }
+        @keyframes blink-move {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.5; }
+            100% { transform: scale(1); opacity: 1; }
+        }
         .telegram-icon {
             position: fixed;
             bottom: 20px;
@@ -89,27 +87,25 @@
             justify-content: center;
             align-items: center;
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            animation: blink-move 1.5s infinite ease-in-out;
             cursor: pointer;
-            animation: shake 1s infinite alternate, blink 1s infinite;
-        }
-        @keyframes shake {
-            0% { transform: translateX(0); }
-            50% { transform: translateX(-5px); }
-            100% { transform: translateX(5px); }
-        }
-        @keyframes blink {
-            0% { opacity: 1; }
-            50% { opacity: 0.5; }
-            100% { opacity: 1; }
         }
         .telegram-icon img {
             width: 40px;
             height: 40px;
         }
     </style>
+    <script>
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.addEventListener('keydown', function(event) {
+            if (event.ctrlKey && (event.key === 'u' || event.key === 's' || event.key === 'Shift')) {
+                event.preventDefault();
+            }
+        });
+    </script>
 </head>
 <body>
-    <h1 onclick="showPopup()">All In One</h1>
+    <h1>All In One</h1>
     <div class="app-container">
         <script>
             let apps = [
@@ -120,10 +116,6 @@
                 {name: "Range", icon: "https://i.ibb.co/N2MW90WJ/Range.png", link: "https://rb.gy/ur0s5t"},
                 {name: "Aryog", icon: "https://i.ibb.co/PGQcwQbG/Aryog.png", link: "https://shorturl.at/44Y9I"},
                 {name: "V-Live", icon: "https://i.ibb.co/1Y54DrjN/V-Live.png", link: "https://shorturl.at/BL5AD"},
-                {name: "Work Snap", icon: "https://i.ibb.co/SwNp0Ndk/WorkSnap.png", link: "https://shorturl.at/3nvLx"},
-                {name: "Zentus", icon: "https://i.ibb.co/99JXtdSg/Zentus.png", link: "https://shorturl.at/AvlOf"},
-                {name: "Flicket", icon: "https://i.ibb.co/8D2jNQ9G/Flicket.png", link: "https://shorturl.at/7RCEe"},
-                {name: "Job Hunter", icon: "https://ibb.co/QFpbBwVq", link: "https://rb.gy/2dbrmm"},
                 {name: "JobDay", icon: "https://ibb.co/JW8X2PCY", link: "https://shorturl.at/stOc7"}
             ];
             apps.forEach(app => {
@@ -139,13 +131,8 @@
             });
         </script>
     </div>
-    <a class="telegram-icon" onclick="showPopup()">
+    <a class="telegram-icon" href="https://t.me/SFAEarnings">
         <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram">
     </a>
-    <script>
-        function showPopup() {
-            alert("Welcome to All In One!");
-        }
-    </script>
 </body>
 </html>
