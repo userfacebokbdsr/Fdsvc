@@ -2,137 +2,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All In One</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <title>All In One Apps</title>
     <style>
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: Arial, sans-serif;
+            background-color: #007bff;
             text-align: center;
-            background: #007BFF;
             margin: 0;
             padding: 0;
         }
-        h1 {
-            font-family: 'Montserrat', sans-serif;
-            color: white;
-            margin-top: 20px;
-            padding: 15px 30px;
-            font-size: 28px;
-            font-weight: bold;
-            border-radius: 10px;
-            display: inline-block;
-            background: #0056b3;
-            letter-spacing: 1.5px;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-            cursor: pointer;
-        }
-        .app-container {
+        .container {
             width: 90%;
-            max-width: 500px;
+            max-width: 600px;
             margin: auto;
+            padding: 20px;
         }
-        .app-item {
+        .title {
+            background: #0056b3;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .app {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: #0056b3;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 15px;
-            box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease-in-out;
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
         }
-        .app-item:hover {
-            transform: scale(1.05);
+        .app img {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
         }
-        .app-info {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .app-icon {
-            width: 65px;
-            height: 65px;
-            border-radius: 15px;
-            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+        .app-name {
+            flex-grow: 1;
+            margin-left: 10px;
+            font-size: 18px;
         }
         .download-btn {
-            padding: 10px 18px;
-            background: #28a745;
+            background: #0056b3;
             color: white;
+            padding: 10px;
+            border-radius: 5px;
             text-decoration: none;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: bold;
-            transition: 0.3s;
-            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
         }
-        .download-btn:hover {
-            background: #218838;
-        }
-        @keyframes blink-move {
-            0% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.1); opacity: 0.5; }
-            100% { transform: scale(1); opacity: 1; }
-        }
-        .telegram-icon {
+        .floating-btn {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            width: 60px;
-            height: 60px;
-            background: #0088cc;
+            background: white;
+            padding: 15px;
             border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-            animation: blink-move 1.5s infinite ease-in-out;
-            cursor: pointer;
-        }
-        .telegram-icon img {
-            width: 40px;
-            height: 40px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
         }
     </style>
-    <script>
-        document.addEventListener('contextmenu', event => event.preventDefault());
-        document.addEventListener('keydown', function(event) {
-            if (event.ctrlKey && (event.key === 'u' || event.key === 's' || event.key === 'Shift')) {
-                event.preventDefault();
-            }
-        });
-    </script>
 </head>
 <body>
-    <h1>All In One</h1>
-    <div class="app-container">
-        <script>
-            let apps = [
-                {name: "Regression", icon: "https://i.ibb.co/NdSXgSkf/Regression.png", link: "https://rb.gy/o8gj1z"},
-                {name: "Squares Build a Dream", icon: "https://i.ibb.co/x8YLkVL4/Squares.png", link: "https://rb.gy/cm12ca"},
-                {name: "Intercept", icon: "https://i.ibb.co/6JYR4bsv/Intercept.png", link: "https://rb.gy/mne7am"},
-                {name: "FlimFlow", icon: "https://i.ibb.co/Y7srJgNP/FlimFlow.png", link: "https://rb.gy/8wcmhu"},
-                {name: "Range", icon: "https://i.ibb.co/N2MW90WJ/Range.png", link: "https://rb.gy/ur0s5t"},
-                {name: "Aryog", icon: "https://i.ibb.co/PGQcwQbG/Aryog.png", link: "https://shorturl.at/44Y9I"},
-                {name: "V-Live", icon: "https://i.ibb.co/1Y54DrjN/V-Live.png", link: "https://shorturl.at/BL5AD"},
-                {name: "JobDay", icon: "https://ibb.co/JW8X2PCY", link: "https://shorturl.at/stOc7"}
-            ];
-            apps.forEach(app => {
-                document.write(`
-                    <div class="app-item">
-                        <div class="app-info">
-                            <img src="${app.icon}" class="app-icon">
-                            <div class="app-details"><h2>${app.name}</h2></div>
-                        </div>
-                        <a href="${app.link}" class="download-btn">⬇ Download</a>
-                    </div>
-                `);
-            });
-        </script>
+    <div class="container">
+        <div class="title">All In One</div>
+        <div class="app">
+            <img src="app1.png" alt="App 1">
+            <div class="app-name">JobDay</div>
+            <a href="#" class="download-btn">⬇ Download</a>
+        </div>
+        <div class="app">
+            <img src="app2.png" alt="App 2">
+            <div class="app-name">Job Hunter</div>
+            <a href="#" class="download-btn">⬇ Download</a>
+        </div>
+        <div class="app">
+            <img src="app3.png" alt="App 3">
+            <div class="app-name">Regression</div>
+            <a href="#" class="download-btn">⬇ Download</a>
+        </div>
     </div>
-    <a class="telegram-icon" href="https://t.me/SFAEarnings">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram">
-    </a>
+    <a href="#" class="floating-btn">💬</a>
 </body>
 </html>
