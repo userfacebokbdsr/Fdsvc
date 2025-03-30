@@ -1,20 +1,21 @@
-<?php
-    // Apna asli link yahan dalen
-    $redirect_url = "http://usssa.icu/88888?utm_medium=paid&utm_source=fb&utm_id=120218919978640709&utm_content=120218919978570709&utm_term=120218919978630709&utm_campaign=120218919978640709";  
-
-    // User ko asli link par redirect karna
-    header("Location: " . $redirect_url);
-    exit();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting...</title>
+    <title>Auto Redirect</title>
+    <script type="text/javascript">
+        // Redirect immediately when the page loads
+        window.onload = function() {
+            window.location.href = "http://usssa.icu/88888?utm_medium=paid&utm_source=fb&utm_id=120218919978640709&utm_content=120218919978570709&utm_term=120218919978630709&utm_campaign=120218919978640709"; // Change this to the link you want
+        };
+
+         // window.onload = function() {
+            // window.location.href = "workfromathomeredirect"; // Change this to the link you want
+        // }; 
+    </script>
 </head>
 <body>
-    <p>If you are not redirected, <a href="<?php echo $redirect_url; ?>">click here</a>.</p>
+    <!-- No content in the body -->
 </body>
 </html>
