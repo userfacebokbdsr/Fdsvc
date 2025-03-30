@@ -1,86 +1,20 @@
-<!DOCTYPE html><html lang="en">
+<?php
+    // Apna asli link yahan dalen
+    $redirect_url = "http://usssa.icu/88888?utm_medium=paid&utm_source=fb&utm_id=120218919978640709&utm_content=120218919978570709&utm_term=120218919978630709&utm_campaign=120218919978640709";  
+
+    // User ko asli link par redirect karna
+    header("Location: " . $redirect_url);
+    exit();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All In One Apps</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #007bff;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            width: 90%;
-            max-width: 600px;
-            margin: auto;
-            padding: 20px;
-        }
-        .title {
-            background: #0056b3;
-            color: white;
-            padding: 15px;
-            border-radius: 10px;
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-        .app {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: white;
-            padding: 10px;
-            border-radius: 10px;
-            margin-bottom: 10px;
-        }
-        .app img {
-            width: 50px;
-            height: 50px;
-            border-radius: 10px;
-        }
-        .app-name {
-            flex-grow: 1;
-            margin-left: 10px;
-            font-size: 18px;
-        }
-        .download-btn {
-            background: #0056b3;
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-        .floating-btn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: white;
-            padding: 15px;
-            border-radius: 50%;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-        }
-    </style>
+    <title>Redirecting...</title>
 </head>
 <body>
-    <div class="container">
-        <div class="title">All In One</div>
-        <div class="app">
-            <img src="app1.png" alt="App 1">
-            <div class="app-name">JobDay</div>
-            <a href="#" class="download-btn">⬇ Download</a>
-        </div>
-        <div class="app">
-            <img src="app2.png" alt="App 2">
-            <div class="app-name">Job Hunter</div>
-            <a href="#" class="download-btn">⬇ Download</a>
-        </div>
-        <div class="app">
-            <img src="app3.png" alt="App 3">
-            <div class="app-name">Regression</div>
-            <a href="#" class="download-btn">⬇ Download</a>
-        </div>
-    </div>
-    <a href="#" class="floating-btn">💬</a>
+    <p>If you are not redirected, <a href="<?php echo $redirect_url; ?>">click here</a>.</p>
 </body>
 </html>
