@@ -1,34 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <title>Redirecting...</title>
-    <script>
-        const whatsappNumbers = [
-            "919114421949",
-            "918730857507",
-            "919046948042",
-            "919474824130",
-            "919395420914",
-            "917234861910",
-            "918075130561",
-            "919474806851",
-            "917431953459"
-        ];
-
-        function redirectToSavedOrRandomNumber() {
-            let savedNumber = localStorage.getItem('selectedWhatsappNumber');
-
-            if (!savedNumber) {
-                let randomIndex = Math.floor(Math.random() * whatsappNumbers.length);
-                savedNumber = whatsappNumbers[randomIndex];
-                localStorage.setItem('selectedWhatsappNumber', savedNumber);
-            }
-
-            window.location.href = "https://wa.me/" + savedNumber;
-        }
-
-        window.onload = redirectToSavedOrRandomNumber;
-    </script>
+  <script>
+    window.location.replace("https://t.me/SFAEarnings");
+  </script>
 </head>
-<body></body>
+<body>
+</body>
 </html>
